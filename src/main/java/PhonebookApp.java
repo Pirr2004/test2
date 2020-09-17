@@ -8,7 +8,7 @@ public class PhonebookApp {
         Hashtable phonebook = new Hashtable();
         Scanner scanner = new Scanner(System.in);
         Pattern patternPhoneNumber = Pattern.compile("\\d\\d-\\d\\d-\\d\\d");
-        Pattern patternName = Pattern.compile("[a-zA-Z][a-zA-Z0-9]{1,15}");
+        Pattern patternName = Pattern.compile("[a-zA-Z][a-zA-Z0-9]{0,14}");
 
         System.out.println("Enter command [add, find, del, list, exit]:");
 
