@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class PhonebookApp {
-    private static final Hashtable phonebookDB = new Hashtable();
+    private static final Hashtable<String, String> phonebookDB = new Hashtable<>();
     private static final Pattern patternPhoneNumber = Pattern.compile("\\d\\d-\\d\\d-\\d\\d");
     private static final Pattern patternName = Pattern.compile("[a-zA-Z][a-zA-Z0-9]{0,14}");
 
@@ -16,11 +16,11 @@ public class PhonebookApp {
         while (true) {
             String command = scanner.nextLine();
             String[] commandWords = command.split(" ");
-            if (phonebook(commandWords)) return;
+            if (commandInterpreter(commandWords)) return;
         }
     }
 
-    private static boolean phonebook(String[] commandWords) {
+    private static boolean commandInterpreter(String[] commandWords) {
         switch (commandWords[0]) {
             case "add":
                 add(commandWords);
