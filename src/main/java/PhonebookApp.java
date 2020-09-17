@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class PhonebookApp {
-    private static Hashtable phonebookDB = new Hashtable();
-    private static Pattern patternPhoneNumber = Pattern.compile("\\d\\d-\\d\\d-\\d\\d");
-    private static Pattern patternName = Pattern.compile("[a-zA-Z][a-zA-Z0-9]{0,14}");
+    private static final Hashtable phonebookDB = new Hashtable();
+    private static final Pattern patternPhoneNumber = Pattern.compile("\\d\\d-\\d\\d-\\d\\d");
+    private static final Pattern patternName = Pattern.compile("[a-zA-Z][a-zA-Z0-9]{0,14}");
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
