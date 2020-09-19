@@ -53,7 +53,7 @@ public class PhonebookApp {
     }
 
     private static void del(String[] commandWords) {
-        if (patternPhoneNumber.matcher(commandWords[1]).matches()) {
+        if (commandWords.length > 1 && patternPhoneNumber.matcher(commandWords[1]).matches()) {
             phonebookDB.remove(commandWords[1]);
             System.out.println("Phone number deleted");
         } else {
@@ -62,7 +62,7 @@ public class PhonebookApp {
     }
 
     private static void find(String[] commandWords) {
-        if (patternPhoneNumber.matcher(commandWords[1]).matches()) {
+        if (commandWords.length > 1 && patternPhoneNumber.matcher(commandWords[1]).matches()) {
             if (phonebookDB.get(commandWords[1]) == null) {
                 System.out.println("Phone number not found.");
             } else {
@@ -74,8 +74,8 @@ public class PhonebookApp {
     }
 
     private static void add(String[] commandWords) {
-        if (patternPhoneNumber.matcher(commandWords[1]).matches()) {
-            if (patternName.matcher(commandWords[2]).matches()) {
+        if (commandWords.length > 1 && patternPhoneNumber.matcher(commandWords[1]).matches()) {
+            if (commandWords.length > 2 && patternName.matcher(commandWords[2]).matches()) {
                 phonebookDB.put(commandWords[1], commandWords[2]);
                 System.out.println("Added phone number: " + commandWords[1] + " Name: " + commandWords[2]);
             } else {
