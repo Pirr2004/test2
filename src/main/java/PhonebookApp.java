@@ -44,10 +44,10 @@ public class PhonebookApp {
     }
 
     private static void list() {
-        Enumeration phoneNumbers = phonebookDB.keys();
+        Enumeration<String> phoneNumbers = phonebookDB.keys();
         String record;
         while (phoneNumbers.hasMoreElements()) {
-            record = (String) phoneNumbers.nextElement();
+            record = phoneNumbers.nextElement();
             System.out.println(record + " " + phonebookDB.get(record));
         }
     }
